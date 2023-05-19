@@ -1,27 +1,8 @@
-import { Email, Github, Linkedin } from '@/lib/icons';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <>
-      <header>
-        <nav className='flex items-center justify-between border-b py-4'>
-          <Link href='/' className='text-lg font-bold'>
-            Connor Littleton
-          </Link>
-          <div className='flex items-center space-x-2 text-slate-800'>
-            <a className='h-6 w-6' href='https://github.com/Littletonconnor'>
-              <Github />
-            </a>
-            <a className='h-6 w-6' href='https://github.com/Littletonconnor'>
-              <Linkedin />
-            </a>
-            <a className='h-6 w-6' href='https://github.com/Littletonconnor'>
-              <Email />
-            </a>
-          </div>
-        </nav>
-      </header>
       <main className='space-y-6 divide-y'>
         <article className='pt-6'>
           <h2 className='text-xl font-bold'>Posts</h2>
@@ -77,7 +58,7 @@ export default function Home() {
               </span>
             </li>
           </ul>
-          <Link className='text-slate-800 underline' href='/projects'>
+          <Link className='text-slate-800 underline' href='/recipes'>
             See more
           </Link>
         </article>
