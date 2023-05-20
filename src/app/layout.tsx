@@ -1,10 +1,12 @@
 import { Inter } from 'next/font/google';
+import Link from 'next/link';
+
+import { Email, Github, Linkedin } from '@/lib/icons';
 import { classnames } from '@/lib/utils';
 
-import './globals.css';
-import './reset.css';
-import Link from 'next/link';
-import { Email, Github, Linkedin } from '@/lib/icons';
+import '@/styles/globals.css';
+import '@/styles/mdx.css';
+import '@/styles/reset.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

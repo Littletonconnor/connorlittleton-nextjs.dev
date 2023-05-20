@@ -1,8 +1,8 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-import remarkGfm from 'remark-gfm';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import remarkGfm from 'remark-gfm';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -26,12 +26,6 @@ const Recipe = defineDocumentType(() => ({
       type: 'date',
       description: 'The date of the recipe',
       required: true,
-    },
-  },
-  computedFields: {
-    url: {
-      type: 'string',
-      resolve: (doc) => `/recipes/${doc._raw.flattenedPath}`,
     },
   },
   computedFields,
