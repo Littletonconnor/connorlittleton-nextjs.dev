@@ -3,7 +3,7 @@ import { allRecipes } from 'contentlayer/generated';
 
 import { Mdx } from '@/lib/mdx';
 
-export async function getStaticParams() {
+export async function generateStaticParams() {
   return allRecipes.map((recipe) => {
     return {
       slug: recipe.slug,
@@ -33,32 +33,4 @@ export default async function Page({
       <Mdx code={recipe.body.code} searchParams={searchParams} />
     </section>
   );
-}
-
-function generateUsers(n: number) {
-  let tableData = [];
-
-  for (let i = 1; i <= n; i++) {
-    tableData.push({
-      id: i,
-      name: `User ${i}`,
-      email: `user${i}@example.com`,
-    });
-  }
-
-  return tableData;
-}
-
-const pageSize = 5;
-const totalUsers = 100;
-const tableData = generateUsers(100);
-
-function getTableData(offset: number) {
-  const startIndex = (offset > 0 ? offset - 1 : 0) * pageSize;
-
-  if (startIndex >= totalUsers) {
-    return tableData.slice(totalUsers - pageSize, totalUsers);
-  }
-
-  return tableData.slice(startIndex, startIndex + pageSize);
 }
