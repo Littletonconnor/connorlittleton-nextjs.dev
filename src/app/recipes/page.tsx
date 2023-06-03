@@ -17,9 +17,10 @@ export default function Recipes() {
             className='group'
             href={`/recipes/${recipe.link}`}
           >
-            <div className='flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-200/20 backdrop-blur-xl transition group-hover:border-gray-300'>
+            <div className='relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-200/20 backdrop-blur-xl transition group-hover:border-gray-300'>
               {recipe.src ? (
                 <Image
+                  priority
                   src={recipe.src}
                   alt=''
                   className='h-full overflow-hidden rounded-md object-contain px-1'
@@ -43,3 +44,6 @@ export default function Recipes() {
     </div>
   );
 }
+
+// not too sure what this is doing.
+export const dynamic = 'force-dynamic';

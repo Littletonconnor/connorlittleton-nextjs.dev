@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <main className='space-y-6 divide-y'>
         <article className='pt-6'>
-          <h2 className='text-2xl font-bold'>Posts</h2>
+          <h2 className='text-2xl font-bold'>Blog</h2>
           <p className='text-slate-600'>
             Some things I&apos;ve learned over the years.
           </p>

@@ -7,7 +7,6 @@ import { examples } from '@/components/examples';
 
 interface MdxProps {
   code: string;
-  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 const components = {
@@ -20,7 +19,7 @@ export function Mdx({ code }: MdxProps) {
 
   return (
     <article className='prose prose-quoteless prose-neutral dark:prose-invert'>
-      <Component custom='custom props' components={{ ...components }} />
+      <Component components={{ ...components }} />
     </article>
   );
 }
