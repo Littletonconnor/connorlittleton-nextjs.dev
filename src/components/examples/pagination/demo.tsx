@@ -7,39 +7,41 @@ export function PaginationDemo() {
   const offset = Number(searchParams.get('offset') || 1);
 
   return (
-    <div className='relative overflow-x-auto border border-slate-200 shadow-md sm:rounded-lg'>
-      <table className='w-full text-left text-sm text-gray-500 dark:text-gray-400'>
-        <thead className='bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400'>
-          <tr>
-            <th scope='col' className='px-6 py-3'>
-              Id
-            </th>
-            <th scope='col' className='px-6 py-3'>
-              Name
-            </th>
-            <th scope='col' className='px-6 py-3'>
-              email
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {getTableData(offset).map((user) => (
-            <tr
-              key={user.id}
-              className='border-b bg-white dark:border-gray-700 dark:bg-gray-900'
-            >
-              <th
-                scope='row'
-                className='whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white'
-              >
-                {user.id}
+    <div className='pb-8'>
+      <div className='relative overflow-x-auto border border-slate-200 shadow-md sm:rounded-lg'>
+        <table className='w-full text-left text-sm text-gray-500 dark:text-gray-400'>
+          <thead className='bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400'>
+            <tr>
+              <th scope='col' className='px-6 py-3'>
+                Id
               </th>
-              <td className='px-6 py-4'>{user.name}</td>
-              <td className='px-6 py-4'>{user.email}</td>
+              <th scope='col' className='px-6 py-3'>
+                Name
+              </th>
+              <th scope='col' className='px-6 py-3'>
+                email
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {getTableData(offset).map((user) => (
+              <tr
+                key={user.id}
+                className='border-b bg-white dark:border-gray-700 dark:bg-gray-900'
+              >
+                <th
+                  scope='row'
+                  className='whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white'
+                >
+                  {user.id}
+                </th>
+                <td className='px-6 py-4'>{user.name}</td>
+                <td className='px-6 py-4'>{user.email}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

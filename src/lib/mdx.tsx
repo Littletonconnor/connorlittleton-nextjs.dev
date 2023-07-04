@@ -11,6 +11,7 @@ interface MdxProps {
 
 const components = {
   ComponentExample,
+  p: (props: any) => <p style={{ marginBottom: '8px' }} {...props} />,
   ...examples,
 };
 

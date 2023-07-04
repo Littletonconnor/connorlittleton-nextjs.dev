@@ -3,25 +3,25 @@ const recipes = [
     id: 1,
     name: 'Pagination',
     link: 'pagination',
-    src: '/examples/pagination.png',
+    description: 'Pagination with table',
   },
   {
     id: 2,
     name: 'Coming Soon',
     link: 'pagination',
-    src: '',
+    description: '',
   },
   {
     id: 3,
     name: 'Coming Soon',
     link: 'pagination',
-    src: '',
+    description: '',
   },
   {
     id: 4,
     name: 'Coming Soon',
     link: 'pagination',
-    src: '',
+    description: '',
   },
 ] as const;
 

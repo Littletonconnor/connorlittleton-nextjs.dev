@@ -18,26 +18,21 @@ export default function Recipes() {
             href={`/recipes/${recipe.link}`}
           >
             <div className='relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-200/20 backdrop-blur-xl transition group-hover:border-gray-300'>
-              {recipe.src ? (
-                <Image
-                  priority
-                  src={recipe.src}
-                  alt=''
-                  className='h-full overflow-hidden rounded-md object-contain px-1'
-                  fill
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 25vw'
-                />
+              {recipe.description ? (
+                <div className='space-y-3 text-center'>
+                  <p className='text-lg font-bold text-slate-600'>
+                    {recipe.name}
+                  </p>
+                  <p className='text-sm font-semibold text-slate-500'>
+                    {recipe.description}
+                  </p>
+                </div>
               ) : (
                 <span className='text-sm font-medium italic text-slate-600'>
                   Coming Soon
                 </span>
               )}
             </div>
-            {recipe.src && (
-              <p className='mt-3 text-sm font-medium text-slate-900'>
-                {recipe.name}
-              </p>
-            )}
           </Link>
         ))}
       </div>
