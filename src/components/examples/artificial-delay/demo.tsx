@@ -2,25 +2,24 @@ import { FormEvent, useState } from 'react';
 
 function ArtificialDelayExample() {
   const [isSaving, setIsSaving] = useState(false);
+  const [range, setRange] = useState(500);
+  const [artificialDelay, setArtificialDelay] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSaving(true);
 
-    const formData = new FormData(e.currentTarget);
-    const data = Object.entries(formData);
-
-    await minDelay(signup(data), 1000);
+    await minDelay(signup(), artificialDelay ? range : 100);
 
     setIsSaving(false);
   }
 
-  async function signup(email: [string, any][]) {
-    await sleep(500);
+  async function signup() {
+    await sleep(artificialDelay ? range : 100);
   }
 
   return (
-    <div className='flex w-full shrink-0 flex-col justify-center lg:w-2/3'>
+    <div className='flex w-full shrink-0 flex-col justify-center space-y-2 lg:w-3/4'>
       <p className='text-2xl font-bold text-slate-700 lg:text-3xl'>
         Sign up for our newsletter
       </p>
@@ -39,6 +38,32 @@ function ArtificialDelayExample() {
             {isSaving ? 'Saving...' : 'Sign up'}
           </button>
         </form>
+      </div>
+      <div className='flex w-full items-center space-x-6 text-xs'>
+        <label className='group flex shrink-0 items-center'>
+          <input
+            className='mr-2'
+            onChange={() => setArtificialDelay(!artificialDelay)}
+            type='checkbox'
+          />
+          <span className='font-medium text-slate-900'>Artificial delay</span>
+        </label>
+        <fieldset className='mt-6 shrink-0 disabled:opacity-50 sm:mt-0'>
+          <label className='flex flex-col text-sm sm:flex-row sm:items-center'>
+            <input
+              type='range'
+              min='250'
+              step='50'
+              max='2000'
+              onChange={(e) => setRange(e.currentTarget.valueAsNumber)}
+              className='mt-1 max-w-xs'
+              value={range}
+            />
+            <span className='order-first mb-2 font-medium text-slate-900 sm:order-1 sm:mb-0 sm:ml-2'>
+              Minimum delay: {range}ms
+            </span>
+          </label>
+        </fieldset>
       </div>
     </div>
   );

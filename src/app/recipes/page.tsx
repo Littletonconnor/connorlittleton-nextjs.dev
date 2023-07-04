@@ -10,7 +10,7 @@ export default function Recipes() {
       <p className='text-lg text-slate-600'>
         Code snippets for common user interfaces.
       </p>
-      <div className='mt-12 grid grid-cols-2 gap-x-4 gap-y-12'>
+      <div className='mt-12 grid grid-cols-2 gap-x-4 gap-y-8'>
         {recipes.map((recipe) => (
           <Link
             key={recipe.id}
@@ -19,7 +19,7 @@ export default function Recipes() {
           >
             <div className='relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-200/20 backdrop-blur-xl transition group-hover:border-gray-300'>
               {recipe.description ? (
-                <div className='space-y-3 text-center'>
+                <div className='space-y-1 text-center'>
                   <p className='text-lg font-bold text-slate-600'>
                     {recipe.name}
                   </p>

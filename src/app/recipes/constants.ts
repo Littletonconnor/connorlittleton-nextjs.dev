@@ -7,9 +7,9 @@ const recipes = [
   },
   {
     id: 2,
-    name: 'Coming Soon',
-    link: 'pagination',
-    description: '',
+    name: 'Artificial Delay',
+    link: 'artificial-delay',
+    description: 'Simulate an artificial delay in the API call',
   },
   {
     id: 3,
